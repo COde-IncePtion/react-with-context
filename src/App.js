@@ -1,26 +1,42 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import DisplayCustomerDetails from "./components/displayCustomerDetails";
+import {UserProvider, customerData} from "./context/UserContext";
+import DisplayCustomerDetailsInOtherWay from "./components/displayCustomerDetailsInOtherWay";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.resetCustomerData = () => {
+            this.setState({
+                customerData: {},
+                resetCustomerData: this.resetCustomerData
+            });
+        };
+
+        this.state = {
+            customerData: customerData,
+            resetCustomerData: this.resetCustomerData
+        };
+    }
+
+    render() {
+        return (
+            <UserProvider value={this.state}>
+                <div className="App">
+                    <header className="App-header">
+                        <img src={logo} className="App-logo" alt="logo"/>
+                        <DisplayCustomerDetails/>
+                        <DisplayCustomerDetailsInOtherWay/>
+                    </header>
+                </div>
+            </UserProvider>
+        );
+    }
 }
 
 export default App;
