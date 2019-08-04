@@ -30,6 +30,14 @@ class DisplayCustomerDetails extends Component {
                                         </div>
                                         <div className="row">
                                             <div className="col l1">
+                                                <p>Email:</p>
+                                            </div>
+                                            <div className="col l2">
+                                                <p>{context.customerData.email}</p>
+                                            </div>
+                                        </div>
+                                        <div className="row">
+                                            <div className="col l1">
                                                 <p>Age:</p>
                                             </div>
                                             <div className="col l2">

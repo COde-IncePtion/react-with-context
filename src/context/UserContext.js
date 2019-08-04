@@ -4,7 +4,8 @@ export const customerData = {
     firstName: "Ani",
     lastName: "Joseph",
     age: 40,
-    phoneNumber: '8888899990'
+    phoneNumber: "8888899990",
+    email: "ani@gmail.com"
 };
 
 export const resetCustomerData = () => {

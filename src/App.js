@@ -1,9 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import DisplayCustomerDetails from "./components/displayCustomerDetails";
-import {UserProvider, customerData} from "./context/UserContext";
-import DisplayCustomerDetailsInOtherWay from "./components/displayCustomerDetailsInOtherWay";
+import {customerData, UserProvider} from "./context/UserContext";
+import CustomerDetailsForm from "./components/customerDetailsForm";
 
 
 class App extends React.Component {
@@ -11,16 +10,22 @@ class App extends React.Component {
     constructor(props) {
         super(props);
 
+        this.updateCustomerData = (data) => {
+            this.setState({
+                customerData: data
+            });
+        };
+
         this.resetCustomerData = () => {
             this.setState({
-                customerData: {},
-                resetCustomerData: this.resetCustomerData
+                customerData: {}
             });
         };
 
         this.state = {
             customerData: customerData,
-            resetCustomerData: this.resetCustomerData
+            resetCustomerData: this.resetCustomerData,
+            updateCustomerData: this.updateCustomerData
         };
     }
 
@@ -28,6 +33,7 @@ class App extends React.Component {
         return (
             <UserProvider value={this.state}>
                 <DisplayCustomerDetails/>
+                <CustomerDetailsForm/>
             </UserProvider>
         );
     }
