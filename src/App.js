@@ -27,13 +27,7 @@ class App extends React.Component {
     render() {
         return (
             <UserProvider value={this.state}>
-                <div className="App">
-                    <header className="App-header">
-                        <img src={logo} className="App-logo" alt="logo"/>
-                        <DisplayCustomerDetails/>
-                        <DisplayCustomerDetailsInOtherWay/>
-                    </header>
-                </div>
+                <DisplayCustomerDetails/>
             </UserProvider>
         );
     }

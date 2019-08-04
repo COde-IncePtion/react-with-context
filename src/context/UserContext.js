@@ -3,7 +3,8 @@ import React from "react";
 export const customerData = {
     firstName: "Ani",
     lastName: "Joseph",
-    age: 40
+    age: 40,
+    phoneNumber: '8888899990'
 };
 
 export const resetCustomerData = () => {
