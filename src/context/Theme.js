@@ -4,12 +4,12 @@ export const theme = {
     dark: {
         backgroundColor: "blue-grey darken-1",
         buttonColor: "waves-light",
-        textColor: "white-text",
+        textColor: "white",
     },
     light: {
-        backgroundColor: "light-blue lighten-4",
-        textColor: "grey darken-3",
-        buttonColor: "red",
+        backgroundColor: "light-green lighten-1",
+        textColor: "black",
+        buttonColor: "blue-grey darken-1",
     }
 };
 

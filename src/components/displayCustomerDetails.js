@@ -11,10 +11,11 @@ class DisplayCustomerDetails extends Component {
                         <UserConsumer>
                             {
                                 ({customerData, resetCustomerData}) => (
+
                                     <div className="row">
                                         <div className="col s8 m6 offset-m3">
                                             <div className={`card ${backgroundColor}`}>
-                                                <div className={`card-content ${textColor}`}>
+                                                <div className={`card-content`} style={{color: textColor}}>
                                                     <span className="card-title">Customer Details</span>
                                                     <div className="row">
                                                         <div className="col l1">
