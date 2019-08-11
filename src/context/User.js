@@ -12,6 +12,6 @@ export const resetCustomerData = () => {
     console.log("hey there from resetCustomerData");
 };
 
-export const UserContext = React.createContext({customerData, resetCustomerData});
-export const {Provider: UserProvider, Consumer: UserConsumer} = UserContext;
+export const User = React.createContext({customerData, resetCustomerData});
+export const {Provider: UserProvider, Consumer: UserConsumer} = User;
 

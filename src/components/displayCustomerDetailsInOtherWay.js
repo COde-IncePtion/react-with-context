@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {UserContext} from "../context/UserContext";
+import {User} from "../context/User";
 
 class DisplayCustomerDetailsInOtherWay extends Component {
     render() {
@@ -13,5 +13,5 @@ class DisplayCustomerDetailsInOtherWay extends Component {
     }
 }
 
-DisplayCustomerDetailsInOtherWay.contextType = UserContext;
+DisplayCustomerDetailsInOtherWay.contextType = User;
 export default DisplayCustomerDetailsInOtherWay;

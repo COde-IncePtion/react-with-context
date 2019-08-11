@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {UserContext} from "../context/UserContext";
+import {User} from "../context/User";
 
 class CustomerDetailsForm extends Component {
     state = {
@@ -16,7 +16,6 @@ class CustomerDetailsForm extends Component {
         const value = event.target.value;
         let customerData = this.state.customerData;
         customerData[fieldName] = value;
-        this.setState({customerData: customerData});
     };
 
     render() {
@@ -25,7 +24,7 @@ class CustomerDetailsForm extends Component {
                 <form className="col s8 m6 offset-l3">
                     <div className="row">
                         <div className="input-field col s6">
-                            <input placeholder="Placeholder" id="firstName" type="text" className="validate"
+                            <input  id="firstName" type="text" className="validate"
                                    value={this.state.firstName} onChange={this.captureUpdate}/>
                             <label htmlFor="firstName">First Name</label>
                         </div>
@@ -42,7 +41,6 @@ class CustomerDetailsForm extends Component {
                             <label htmlFor="age">Age</label>
                         </div>
                         <div className="input-field col s6">
-                            <i className="material-icons prefix">phone</i>
                             <input id="phoneNumber" type="tel" className="validate"
                                    value={this.state.phoneNumber} onChange={this.captureUpdate}/>
                             <label htmlFor="phoneNumber">Telephone</label>
@@ -58,6 +56,7 @@ class CustomerDetailsForm extends Component {
                     <div className="row">
                         <div className="input-field col s3">
                             <button className="waves-effect waves-light btn"
+                                    type="button"
                                     onClick={() => this.context.updateCustomerData(this.state.customerData)}>
                                 Submit
                             </button>
@@ -70,6 +69,6 @@ class CustomerDetailsForm extends Component {
 }
 
 
-CustomerDetailsForm.contextType = UserContext;
+CustomerDetailsForm.contextType = User;
 
 export default CustomerDetailsForm;
