@@ -8,10 +8,7 @@ export const customerData = {
     email: "ani@gmail.com"
 };
 
-export const resetCustomerData = () => {
-    console.log("hey there from resetCustomerData");
-};
 
-export const User = React.createContext({customerData, resetCustomerData});
+export const User = React.createContext();
 export const {Provider: UserProvider, Consumer: UserConsumer} = User;
 

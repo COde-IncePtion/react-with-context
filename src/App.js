@@ -43,7 +43,7 @@ class App extends React.Component {
         user: {
             customerData: customerData,
             resetCustomerData: this.resetCustomerData,
-            updateCustomerData: this.updateCustomerData
+            updateCustomerData: this.updateCustomerData,
         },
         theme: {
             themeData: theme.dark,
