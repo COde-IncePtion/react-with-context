@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import DisplayCustomerDetails from "./components/displayCustomerDetails";
 import {UserProvider, customerData} from "./context/User";
-import {ThemeProvider, theme} from "./context/Theme";
+import {ThemeProvider} from "./context/ThemeContext";
 import CustomerDetailsForm from "./components/customerDetailsForm";
 import ThemeToggleSwitch from "./components/appThemeSelection";
 
@@ -20,7 +20,6 @@ class App extends React.Component {
     };
 
     resetCustomerData = () => {
-
         this.setState({
             user: {
                 customerData: {},
@@ -30,30 +29,17 @@ class App extends React.Component {
         });
     };
 
-    toggleTheme = () => {
-        this.setState({
-            theme: {
-                themeData: JSON.stringify(this.state.theme.themeData) === JSON.stringify(theme.dark) ? theme.light : theme.dark,
-                toggleTheme: this.toggleTheme
-            }
-        });
-    };
-
     state = {
         user: {
             customerData: customerData,
             resetCustomerData: this.resetCustomerData,
             updateCustomerData: this.updateCustomerData,
-        },
-        theme: {
-            themeData: theme.dark,
-            toggleTheme: this.toggleTheme
         }
     };
 
     render() {
         return (
-            <ThemeProvider value={this.state.theme}>
+            <ThemeProvider>
                 <UserProvider value={this.state.user}>
                     <ThemeToggleSwitch/>
                     <DisplayCustomerDetails/>
